@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import classes from './Question.module.css';
-import CloseIcon from '@material-ui/icons/Close';
-import CheckIcon from '@material-ui/icons/Check';
 
 class Question extends Component {
     state = {
@@ -102,7 +100,7 @@ class Question extends Component {
                     <div>
                         {this.state.questions.map((question, index) => (
                             <div>
-                                <div>{question.chosenOption === question.correctAnswer ? <CheckIcon style={{color: '#09bd60'}}></CheckIcon> : <CloseIcon style={{color: '#e34242'}}></CloseIcon>} {index + 1}. {question.question}</div>
+                                <div>{index + 1}. {question.question}</div>
                                 {question.options.map((option, index) => {
                                     if(index === question.correctAnswer){
                                         return <button disabled className={classes.Correct}>{option}</button>
